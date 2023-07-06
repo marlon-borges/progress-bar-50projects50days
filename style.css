@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.balls_box {
+    width: 30%;
+    max-width: 300px;
+    min-width: 150px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.progress_bar {
+    position: absolute;
+    width: 98%;
+    height: 4px;
+    background-color: lightgray;
+    top: 35%;
+    left: 2%;
+    z-index: -1;
+}
+
+.progress_tinted_bar {
+    position: absolute;
+    width: 0%;
+    height: 4px;
+    background-color: rgb(49, 138, 255);
+    top: 35%;
+    left: 2%;
+    z-index: 0;
+    transition: width .2s ease-in-out;
+}
+
+.first_ball, .second_ball, .third_ball, .fourth_ball {
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background-color: lightgray;
+    display: inline-block;
+    z-index: 2;
+    transition: all .2s ease-in-out;
+}
+
+.buttons_box {
+    display: flex;
+    gap: 1rem;
+}
+
+.previous, .next {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.250rem;
+    background-color: rgb(49, 138, 255);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.previous:hover, .next:hover {
+    background-color: rgb(32, 128, 253);
+}
+
+/* --------- */
+
+.active {
+    background-color: rgb(49, 138, 255);
+}
+
+.disabled {
+    background-color: lightgray;
+    user-select: none;
+    cursor: not-allowed;
+}
+
+.disabled:hover {
+    user-select: none;
+    background-color: lightgray;
+}
